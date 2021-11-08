@@ -1,0 +1,12 @@
+class
+-------
+-> A class is a group name. 
+     1. properties / variables
+     2. methods
+     3. constructors
+     4. inner classes
+     5.  blaocked scope
+
+
+     
+
