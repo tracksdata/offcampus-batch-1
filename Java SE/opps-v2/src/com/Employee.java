@@ -1,6 +1,7 @@
 package com;
 
-public class Employee {
+
+public class Employee{
 	
 	
 	//---------------------------------
@@ -74,6 +75,14 @@ public class Employee {
 	}
 	
 	
+	static {
+		System.out.println(">>> statement 1");
+	}
+	
+	static {
+		System.out.println(">>> statement 2");
+	}
+	
 	
 	
 	/*
@@ -137,6 +146,8 @@ public class Employee {
 	
 	public static void main(String[] args) {
 		
+		System.out.println(">>>>> statement 2 -- main --");
+		
 		int x=10;
 		
 		Employee e1=new Employee();
@@ -155,7 +166,7 @@ public class Employee {
 		
 		e1.empId=10;
 		
-		e3.companyName="Abc";
+		//e3.companyName="Abc";
 		
 		System.out.println(e1.companyName);
 		System.out.println(e2.companyName);
