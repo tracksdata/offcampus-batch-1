@@ -15,4 +15,27 @@ Naming Conventions in Java ..
               Ex: final int MAX_AGE=10, final float PI=3.141, int MAX_PRIORITY=10
 
 
+Access Modifiers
+=====================
+1. public
+2. default
+3. protected
+4. private
 
+
+1. public
+----------
+-> accessable from any package.
+
+2. default
+----------
+-> default data accessable only with in the same package.
+
+3. protected
+--------------
+-> protected data accessable only with in the same package.
+-> protected data accessable to the sub class's objects from other Packages
+
+4. private
+-----------
+-> private data accessable with in same class only
