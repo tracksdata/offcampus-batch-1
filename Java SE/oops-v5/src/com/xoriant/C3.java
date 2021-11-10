@@ -9,6 +9,8 @@ package com.xoriant;
 	 
 	 void fun() {
 		 f4();
+		 f3();
+		 
 	 }
 	
 }
