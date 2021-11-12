@@ -25,15 +25,15 @@ public class Demo {
 		  System.out.println("Default");
 	  }
 	 
-	 
 	   void f1(int x) {
-	  System.out.println("int: "+x);
-	  }
-	   
-	  
-	   
+			  System.out.println("int x: "+x);
+		  }
 	   void f1(short x) {
 			  System.out.println("short x: "+x);
+		  }
+	   
+	   void f1(long x) {
+			  System.out.println("long x: "+x);
 		  }
 	   
 	   void f1(byte x) {
@@ -68,6 +68,25 @@ public class Demo {
 	 
 	public static void main(String[] args) {
 		
+		
+		int x=1000;
+		x=x+1;
+		x+=1;
+		
+		
+		//byte bb=x;
+		
+		byte b=5;
+		b+=1;
+		//b=b+1;
+		
+		
+		long st = System.currentTimeMillis();
+		
+		for(int i=1;i<900000000;i++);
+		
+		
+		
 		Demo d=new Demo();
 		
 		d.f1((char)97);
@@ -75,13 +94,15 @@ public class Demo {
 		
 		//d.f1(100,200);
 		long ll=9223372036854775807L;
+		
+		long et = System.currentTimeMillis();
+		//System.out.println("TOTAL TIME: "+(et-st));
 
 		
 		//d.f1(9223372036854775807L);
 		
 		//long x=100;
 		
-		//d.f1(87); // ?
 		
 		//d.f1((byte)8); // ?
 		
