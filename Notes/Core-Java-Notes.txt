@@ -39,3 +39,94 @@ Access Modifiers
 4. private
 -----------
 -> private data accessable with in same class only
+
+
+
+Inheritance
+---------------
+Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another. With the use of inheritance the information is made manageable in a hierarchical order.
+
+The class which inherits the properties of other is known as subclass (derived class, child class) and the class whose properties are inherited is known as superclass (base class, parent class).
+
+extends Keyword
+---------------
+extends is the keyword used to inherit the properties of a class. Following is the syntax of extends keyword.
+
+Syntax
+
+class Super {
+   .....
+   .....
+}
+class Sub extends Super {
+   .....
+   .....
+}
+
+
+Inheritance has three main advantages:
+
+1. Reusability:
+Inheritance allows you to reuse the features of an existing class an unlimited number of times across any class that inherits that class. You can keep consistent functionality across all objects of the same type without rewriting the code.
+2. Code Structure: 
+Inheritance provides a clear, drawable logic structure for your program. It allows developers to understand your code as a collection of related but unique categories rather than simply a block of code.
+2. Data Hiding: 
+The base class can be set to keep some data private so that it cannot be altered by the derived class. This is an example of encapsulation, where access to data is restricted to only the classes that need it for their role.
+
+
+Notes
+--------
+
+1. A super class reference can store all its sub class objects.
+2. Reference of a super class can be used to access all methods of super class, and 
+   common methods (methods which are preent in both super and sub classes ie overridden methods)
+   of sub class.
+3. super class reference can not access individual methods of sub class (a method which is present in the sub
+   class and not present in the super class.)
+
+
+
+Method overriding 
+--------------------
+-> defining same method signature of a super class in the sub class
+
+-> when super class method is public, then overridsden method of sub class must be public
+   it can not be defined as default,protected and private
+
+-> when super class method is defined as default, then sub class can override that method
+        1. default
+        2. public
+        3. protected
+
+-> when super class method is defined as protected, then sub class can override that method
+        1. protected
+        2. public
+
+-> private methods are not available to any of sub classews. 
+
+
+Abstract classe
+--------------------------------
+-> Abstract class contains zero or more abotract method and concrete methods
+-> Abstract class can not be instanciated, but we can create reference variable (object creation is not possible)
+-> The reference of an abstract class can be used to call all the methods of abstract classs
+   and override the methods of sub class
+-> The reference of an abstract class can not be used toi access the individual methods of 
+   the sub class.
+-> all the sub classes of an abstract must override all the abstract methods. 
+-> If any sub class not not overriding the any one of abstract method, then 
+   that sub class must be defined as abstract.
+-> An abstarct class can not be defined both as 'abstarct' and 'final'
+
+
+interface
+-------------------------------
+-> an interface is a method specification which contains zero or more abotract methods
+-> an imterface which contains no methods / blank interface is called marker or tagged interface
+-> a class can implement one or more interfaces
+-> a class can not extends anoter interface
+-> a class can  not extends more than one class at at time
+-> an interface can extends to one or more interfaces
+-> an interface can not implements another interface
+
+
