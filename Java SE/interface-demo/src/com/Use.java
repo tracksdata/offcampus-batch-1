@@ -8,10 +8,8 @@ public class Use {
 		i1.f1();
 		i1.f2();
 		
-		i1=new C2();
+		//it1=new C2();
 		
-		i1.f1();
-		i1.f2();
 		
 
 	}
