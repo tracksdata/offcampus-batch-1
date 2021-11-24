@@ -3,6 +3,7 @@ package com;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -16,8 +17,13 @@ public class BufferedDemo {
 			
 //			File fileLoc=new File("src/abc.txt");
 //			
-//			Scanner sc=new Scanner(fileLoc);
 //			
+			Scanner sc=new Scanner(System.in);
+			boolean boValue = sc.nextBoolean();
+			String s2=sc.next();
+			char ch1 = s2.charAt(0);
+			
+			
 //			//int n1 = sc.nextInt();
 //			//System.out.println(n1);
 //			
@@ -32,9 +38,21 @@ public class BufferedDemo {
 			//  character stream
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			
+			File fileLoc=new File("src/abc.txt");
+			
+			//FileInputStream fis=new FileInputStream(fileLoc);
+			
+			BufferedReader br1=new BufferedReader(new FileReader(fileLoc));
+			
+			for(int i=0;i<fileLoc.length();i++) {
+				System.out.print((char)br1.read());
+			}
+			
+			
 			//isr.re
-			System.out.println("Input a character: ");
-			char ch= (char) br.read();
+			System.out.println("Input a number: ");
+			//char ch= (char) br.read();
+			int ch=Integer.parseInt(br.readLine());
 			System.out.println(ch);
 			br.read();
 			System.out.println("Enter a Strig: ");
@@ -47,7 +65,7 @@ public class BufferedDemo {
 			
 			System.out.println(x);
 			
-			
+		
 			
 			
 			
