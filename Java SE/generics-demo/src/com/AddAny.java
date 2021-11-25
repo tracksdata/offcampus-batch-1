@@ -29,6 +29,7 @@ public class AddAny<E> {
 	public static void main(String[] args) {
 		
 		AddAny<Object> obj=new AddAny<>();
+		
 		obj.add("Abc");
 		obj.add(1000);
 		obj.add(445.54f);
