@@ -1,0 +1,40 @@
+
+Collection Framework Assignment
+===================================
+
+1. Create a Employee class with following attributes
+    empId
+    empName
+    salary
+2. then implement following operations
+    i. Create 5 employee objects with parametarized constructor
+    ii. then create follwing menu
+        1. Add Employee
+        2. Display Employees
+        3. Find Employee by employee ID
+        4. Find Employees by Employee Name
+        5. Update Employee
+        6. Delete Employee
+        7. Sort Employees by salary (high to low)
+        8. Back Up Employee Data
+        9. Restore Last backuped Employee Data
+        10. Exit
+        Enter choice: 
+
+        Notes
+        ------
+        0. loop must be reperated untill user chooszes option 10.
+        1. If you have backuped with Employee ID i.e 1024,1025 and 1026, 
+        2. While restoring backuped data, make sure if current emps object having backup
+           1024,1025 and 1026 (i.e amy data with altready in the backed up file present in the backup
+           current emps object, then you must skip this data)
+
+        Ex:
+
+        List<Employee>emps=new ArrayList<>();
+Empyee e1=new Empyee(1024,"Abc",76766);
+Empyee e2=new Empyee(1025,"Xyz",4535);
+Empyee e3=new Empyee(1026,"test",9743);
+    -> you have backed up emps..  (3 objects)
+    -> you have deleted e2 object
+    -> while restoring, you must restore onky the objects which are not in the emps
