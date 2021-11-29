@@ -15,7 +15,7 @@ public class TreemapDemo {
 		hm.put(76, "Test");
 		hm.put(2, "Test");
 		hm.put(75, "Something");
-		//hm.put(1026, null);
+		hm.put(1026, null);
 		
 		
 		System.out.println(hm.size());
