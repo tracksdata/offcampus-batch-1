@@ -1,0 +1,128 @@
+/*use pss */
+
+/*
+create table inventory(
+inventory_id int primary key,
+seats int
+)
+
+*/
+
+# price
+/*
+create table fare(
+fare_id int primary key,
+price double
+)
+*/
+
+/*
+create table airline_info(
+airline_info_id int primary key,
+airline_name varchar(20),
+airline_logo varchar(50)
+)
+*/
+
+/*
+create table flight_info(
+flight_id int primary key,
+flight_type varchar(10),
+flight_number varchar(10),
+seat_capacity int
+)
+
+*/
+
+/*
+create table flight_schedule(
+schedule_id int primary key,
+flight_number varchar(10),
+flight_date date,
+flight_time time,
+origin varchar(20),
+destination varchar(20)
+)
+*/
+
+# DDL - add columns
+/*
+alter table flight_schedule 
+add fare_id int,
+add inventory_id int
+*/
+
+# DDL - add constrains 
+/*
+alter table flight_schedule
+add constraint fare_fareid_fk foreign key(fare_id)  references fare(fare_id),
+add constraint inventory_inventoryid_fk foreign key(inventory_id) references inventory(inventory_id)
+
+*/
+
+/*
+alter table flights 
+add constraint airline_info_airlineinfoid_fk foreign key(airline_info_id) references airline_info(airline_info_id),
+add constraint flight_info_flightid_fk foreign key(flight_id) references flight_info(flight_id),
+add constraint flight_info_flightid_uq unique(flight_id)
+*/
+
+#create table employee(emp_id int primary key, emp_name varchar(50))
+#create table department(dept_id int primary key,dept_name varchar(30))
+
+#create table dept_details(emp_id int,dept_id int);
+
+/*
+alter table dept_details
+add constraint emp_dept_ids_cpk primary key(emp_id,dept_id)
+*/
+
+
+
+
+/*
+
+1. creaate table booking_details
+	booking_id
+    booking_date
+    booking_time
+    flight_number
+    origin
+    destination
+    total_passengers
+    total_fare
+2. create table checkin_details
+	checkin_id
+    booking_id
+    checkin_date
+    checkin_time
+    flight_number
+    seat_number
+    boarding_gate_number
+    
+3. create table primary_passenger_details
+	passenger_id
+    first_name
+    last_name
+    email_address
+    mobile_number
+    
+4. create table co_passenger_details
+	copassenger_id
+    first_name
+    last_name
+    
+5. passenger_details (many to many mapping)
+    passenger_id		copassenger_id
+    10					1
+    10					2
+    10					3
+    
+
+
+*/
+
+
+
+
+
