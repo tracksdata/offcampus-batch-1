@@ -123,6 +123,109 @@ add constraint emp_dept_ids_cpk primary key(emp_id,dept_id)
 */
 
 
+/*
+
+
+
+Data insert into airline_info values(1,'Indigo','indigo.png');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into airline_info values(2,'Air India','air-india.png');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into airline_info values(3,'Air Asia','air-asia.png');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into airline_info values(4,'Vistara','vistara.png');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into airline_info values(5,'Go Air','go-air.png');
+Query OK, 1 row affected (0.01 sec)
+
+
+create table flights(airline_info_id int, flight_id int);
+alter table flights 
+add constraint airline_info_airlineinfoid_fk foreign key(airline_info_id) references airline_info(airline_info_id),
+add constraint flight_info_flightid_fk foreign key(flight_id) references flight_info(flight_id),
+add constraint flight_info_flightid_uq unique(flight_id)
+
+
+
+
+
+
+mysql> insert into flight_info values(1024,'Air Bus','6E-10024',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1025,'Air Bus','6E-10025',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1026,'Air Bus','6E-10026',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1027,'Air Bus','6E-10027',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1028,'Air Bus','6E-10028',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1029,'Cargo','6C-8765',0);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1030,'Cargo','6C-8766',0);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1031,'Charted','6CF-4437',15);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1032,'Charted','6CF-4438',10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1033,'Charted','6CF-4439',10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1034,'Air Bus','AI-1243',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1035,'Air Bus','AI-1244',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1036,'Air Bus','AI-1245',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1037,'Air Bus','UK-818',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1038,'Air Bus','UK-819',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1039,'Air Bus','UK-820',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1040,'Air Bus','I5-819',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1041,'Air Bus','I5-820',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1042,'Air Bus','I5-821',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1041,'Air Bus','G8-116',150);
+ERROR 1062 (23000): Duplicate entry '1041' for key 'flight_info.PRIMARY'
+mysql> insert into flight_info values(1043,'Air Bus','G8-116',150);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into flight_info values(1044,'Air Bus','G8-117',150);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into flight_info values(1045,'Air Bus','G8-118',150);
+Query OK, 1 row affected (0.01 sec)
+
+
+*/
+
+
 
 
 
