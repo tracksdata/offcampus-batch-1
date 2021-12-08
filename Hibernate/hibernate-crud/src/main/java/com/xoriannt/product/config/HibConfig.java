@@ -8,10 +8,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.xoriannt.product.entity.Customer;
 import com.xoriannt.product.entity.Employee;
-import com.xoriannt.product.entity.Transaction;
-import com.xoriannt.product.entity.User;
+import com.xoriannt.product.entity.Person;
+import com.xoriannt.product.entity.Product;
 
 public class HibConfig {
 
@@ -43,11 +42,10 @@ public class HibConfig {
 				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
 				configuration.setProperties(settings);
-				//configuration.addAnnotatedClass(Customer.class);
-				configuration.addAnnotatedClass(User.class);
-				configuration.addAnnotatedClass(Transaction.class);
-
-				//configuration.addAnnotatedClass(null);
+				
+				//configuration.addAnnotatedClass(Employee.class);
+				//configuration.addAnnotatedClass(Product.class);
+				configuration.addAnnotatedClass(Person.class);
 				
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()

@@ -1,35 +1,49 @@
 package com.xoriannt.product;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import com.xoriannt.product.config.HibConfig;
-import com.xoriannt.product.entity.Customer;
 import com.xoriannt.product.entity.Employee;
+import com.xoriannt.product.entity.Product;
 
-public class HibTest {
+public class ProductDeleteTest {
+	
+	
+	/*
+	 * 1. save
+	 * 2. saveOrUpdate
+	 * 3. update
+	 * 4. merge
+	 * 5. delete
+	 * 6. evict
+	 * 7. clear
+	 * 
+	 * 
+	 * 
+	 */
 
 	public static void main(String[] args) {
-
+		
 		// step1 : get session factory
 		SessionFactory sessionFactory = HibConfig.getSessionFactory();
-
-		// step2 : get / create session from session factory
-
-		Session ses1 = sessionFactory.openSession(); // new session
-
-		Customer cust = new Customer();
-		//cust.setCustId("CUST10001");
-		cust.setCustName("James");
-		cust.setAge(33);
-
-		ses1.save(cust);
 		
-		System.out.println("Primary Key:: "+cust.getCustId());
-
-		ses1.beginTransaction().commit();
-
-		System.out.println(">>> Done <<<");
+		// step2 : get / create session from session factory
+		
+		Session ses1 = sessionFactory.openSession(); // new session
+		
+		
+	
+	  Product prod = ses1.get(Product.class, 170);
+	  
+	  ses1.delete(prod);
+	  ses1.beginTransaction().commit();
+	
+		
+	     System.out.println(">>>> done <<<<");
+		
 
 	}
 

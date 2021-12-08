@@ -8,10 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.xoriannt.product.entity.Customer;
 import com.xoriannt.product.entity.Employee;
-import com.xoriannt.product.entity.Transaction;
-import com.xoriannt.product.entity.User;
 
 public class HibConfig {
 
@@ -37,16 +34,13 @@ public class HibConfig {
 				// Optional properties
 				// settings.put(Environment.HBM2DDL_AUTO, "create-drop");
 				// settings.put(Environment.HBM2DDL_AUTO, "create");
-				settings.put(Environment.HBM2DDL_AUTO, "create");
+				settings.put(Environment.HBM2DDL_AUTO, "update");
 				settings.put(Environment.SHOW_SQL, "true");
 				settings.put(Environment.FORMAT_SQL, "true");
 				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
 				configuration.setProperties(settings);
-				//configuration.addAnnotatedClass(Customer.class);
-				configuration.addAnnotatedClass(User.class);
-				configuration.addAnnotatedClass(Transaction.class);
-
+				configuration.addAnnotatedClass(Employee.class);
 				//configuration.addAnnotatedClass(null);
 				
 
