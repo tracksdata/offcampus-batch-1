@@ -18,12 +18,21 @@ public class HibTest {
 
 		Session ses1 = sessionFactory.openSession(); // new session
 
-		Customer cust = new Customer();
+		Customer cust = new Customer(); // Transient state
 		//cust.setCustId("CUST10001");
 		cust.setCustName("James");
 		cust.setAge(33);
 
-		ses1.save(cust);
+		ses1.save(cust); // persistent state
+		ses1.clear(); // detached state
+		ses1.save(cust); // persistent state
+		//ses1.detach(cust); // JPA
+		//ses1.evict(cust); // Hibernate
+		//ses1.save(cust);
+		//ses1.close();
+		
+		
+		
 		
 		System.out.println("Primary Key:: "+cust.getCustId());
 

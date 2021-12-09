@@ -1,4 +1,4 @@
-package com.xoriannt.product.config;
+package com.xoriannt.employee.config;
 
 import java.util.Properties;
 
@@ -8,12 +8,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.xoriannt.product.entity.Employee;
-import com.xoriannt.product.entity.Person;
-import com.xoriannt.product.entity.Product;
+import com.xoriannt.employee.entity.Department;
+import com.xoriannt.employee.entity.Employee;
 
-public class HibConfig {
-
+public class HibernateConfig {
 	private static SessionFactory sessionFactory;
 
 	public static SessionFactory getSessionFactory() {
@@ -28,7 +26,7 @@ public class HibConfig {
 
 				// mandate properties
 				settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-				settings.put(Environment.URL, "jdbc:mysql://localhost:3306/test?useSSL=false");
+				settings.put(Environment.URL, "jdbc:mysql://localhost:3306/batch1?useSSL=false");
 				settings.put(Environment.USER, "root");
 				settings.put(Environment.PASS, "root1234");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
@@ -44,9 +42,7 @@ public class HibConfig {
 				configuration.setProperties(settings);
 				
 				configuration.addAnnotatedClass(Employee.class);
-				//configuration.addAnnotatedClass(Product.class);
-				configuration.addAnnotatedClass(Person.class);
-				
+				configuration.addAnnotatedClass(Department.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();

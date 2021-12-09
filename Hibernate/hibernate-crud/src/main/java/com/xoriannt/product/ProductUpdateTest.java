@@ -22,7 +22,7 @@ public class ProductUpdateTest {
 		
 		
 	
-	  Product prod = ses1.get(Product.class, 170);
+	  Product prod = ses1.get(Product.class, 2);
 	  
 	  // update prod
 	  /*
@@ -33,6 +33,7 @@ public class ProductUpdateTest {
 	   */
 	//Product prod=new Product();
 	  // prod.setId(170);
+	  
 	   prod.setName("Vila Wine Glass XXL");
 	   prod.setDescription("Sony E8 Wireless1");
 	   prod.setPrice(211);

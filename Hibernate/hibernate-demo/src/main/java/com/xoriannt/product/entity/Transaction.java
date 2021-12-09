@@ -2,11 +2,9 @@ package com.xoriannt.product.entity;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
 
 @Entity
 public class Transaction {
