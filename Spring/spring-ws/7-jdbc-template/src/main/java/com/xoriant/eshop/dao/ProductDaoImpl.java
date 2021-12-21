@@ -9,9 +9,14 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.xoriant.eshop.model.Product;
 
@@ -85,22 +90,63 @@ public class ProductDaoImpl {
 	}
 	
 	
+	void f1() {
+		
+	}
+	
+	void f2() {
+		
+	}
+	
+	void f3() {
+		
+	}
+	// List all Products using  resultsetExtractor interface
+	@Transactional(isolation = Isolation.READ_COMMITTED)
+	public List<Product> findAllV4(){
+		f1(); // saving
+	    f2(); // updating
+		f3(); // deleting
+		return jdbcTemplate.query("select * from product", new ResultSetExtractorDemo());
+	}
+	
+	
 }
 
-/*
+
 class  RowMapperDemo implements RowMapper<Product>{
 	@Override
 	public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Product prod=new Product();
-		
+			
+			Product prod=new Product();
 			prod.setId(rs.getInt("id"));
 			prod.setName(rs.getString("name"));
 			prod.setPrice(rs.getDouble("price"));
 			prod.setDescription(rs.getString("description"));		
 		return prod;
 	}
-	*/
-//}
+	
+}
+
+class ResultSetExtractorDemo implements ResultSetExtractor<List<Product>>{
+	@Override
+	public List<Product> extractData(ResultSet rs) throws SQLException, DataAccessException {
+		
+		List<Product> prods=new ArrayList<Product>();
+		
+		while(rs.next()) {
+			Product prod=new Product();
+			prod.setId(rs.getInt("id"));
+			prod.setName(rs.getString("name"));
+			prod.setPrice(rs.getDouble("price"));
+			prod.setDescription(rs.getString("description"));	
+			prods.add(prod);
+		}
+		
+		
+		return prods;
+	}
+}
 
 
 

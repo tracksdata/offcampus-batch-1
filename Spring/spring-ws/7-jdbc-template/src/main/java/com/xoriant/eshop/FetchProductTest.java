@@ -15,7 +15,7 @@ public class FetchProductTest {
 		//prodDao.findAllV1();
 		
 		//prodDao.findAllV2().forEach(System.out::println);
-		prodDao.findAllV3().forEach(System.out::println);
+		prodDao.findAllV4().forEach(System.out::println);
 		
 	}
 
