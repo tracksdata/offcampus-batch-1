@@ -21,6 +21,8 @@ public class EShopController {
 	// load index page
 	@RequestMapping("/")
 	public String indexPage() {
+		
+		
 		return "index";
 	}
 	
@@ -48,7 +50,7 @@ public class EShopController {
 	@RequestMapping("/listAll")
 	public String listAllProducts(Model model) {
 		
-		List<Product> products = prodDao.findAll();
+		List<Product> products = prodDao.findByName("%a%");
 		model.addAttribute("prods", products);
 		
 		return "products";
