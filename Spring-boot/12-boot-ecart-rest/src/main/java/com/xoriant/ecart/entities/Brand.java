@@ -3,6 +3,8 @@ package com.xoriant.ecart.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity(name = "brands")
 public class Brand {
 
@@ -26,5 +28,12 @@ public class Brand {
 	public void setBrandTitle(String brandTitle) {
 		this.brandTitle = brandTitle;
 	}
+
+	@Override
+	public String toString() {
+		return "Brand [brandId=" + brandId + ", brandTitle=" + brandTitle + "]";
+	}
+	
+	
 
 }
