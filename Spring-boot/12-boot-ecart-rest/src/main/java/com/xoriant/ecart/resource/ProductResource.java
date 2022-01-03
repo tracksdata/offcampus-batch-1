@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -35,6 +34,16 @@ public class ProductResource {
 	 * 6. List all products with in given price start and end range : yes
 	 * 7. List all products above given price range : yes
 	 * 8. List all orders of a given user id : yes
+	 * 9. save new product
+	 * 10. update existing product
+	 * 11. delete product by product id
+	 * 12. find product by product id
+	 * 13. find all products by product name
+	 * 14. find all products by keywords
+	 * 15. find all brands of a given category name
+	 * 16. save more than one product object at a time
+	 * 17. sort all products by highest price range
+	 * 18. sort all products by lowest price range
 	 * 
 	 * -----------------------------------------------
 	 */
@@ -67,34 +76,38 @@ public class ProductResource {
 		return productService.findAllProducts();
 	}
 	
+	//List all products by category title
 	@GetMapping("/filter/category/{title}")
 	public List<Product> findByCategory_CatTitleEquals(@PathVariable String title){
 		return productService.findByCategory_CatTitleEquals(title);
 	}
 	
-	
+	//List all products by price greater than
 	@GetMapping("/filter/price/{price}")
 	public List<Product> findByProductPriceGreaterThanEqual(@PathVariable double price){
 		return productService.findByProductPriceGreaterThanEqual(price);
 	}
 	
+	//List all products by price range
 	@GetMapping("/filter/pricerange/{start}/{end}")
 	public 	List<Product> findByProductPriceBetween(@PathVariable double start,@PathVariable double end){
 		return productService.findByProductPriceBetween(start, end);
 	}
 	
+	//List all products by product name
 	@GetMapping("/filter/title/{productTitle}")
 	public List<Product> findByProductTitleLike(@PathVariable String productTitle){
 		return productService.findByProductTitleLike("%"+productTitle+"%");
 	}
 
 
-
+	//List all products by Brand Name
 	@GetMapping("/filter/brandtitle/{brandTitle}")
 	public List<Product> findByBrand_BrandTitleEquals(@PathVariable String brandTitle){
 		return productService.findByBrand_BrandTitleEquals(brandTitle);
 	}
 
+	// List all products by product keywords
 	@GetMapping("/filter/keywords/{keywords}")
 	public List<Product> findByProductKeywordsLike(@PathVariable String keywords){
 		return productService.findByProductKeywordsLike("%"+keywords+"%");
@@ -119,13 +132,15 @@ public class ProductResource {
 		return new ResponseEntity<>("Product ID "+id+" deleted",HttpStatus.OK);
 	}
 	
+	// Delete Product by Product object
 	@DeleteMapping
 	public ResponseEntity<?> deleteProduct(@RequestBody Product product){
 		productService.deleteProduct(product);
 		return new ResponseEntity<>("Product ID "+product.getProductId()+" deleted",HttpStatus.OK);
 	}
 	
-	@PatchMapping
+	//update Product
+	@PutMapping
 	public Product updateProduct(@RequestBody Product product) {
 		return productService.save(product);
 	}

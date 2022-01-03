@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.xoriant</groupId>
-	<artifactId>10-boot-jsp-datajpa</artifactId>
+	<artifactId>price-service</artifactId>
 	<version>1.0</version>
-	<name>12-boot-ecart-rest</name>
+	<name>price-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -49,10 +49,6 @@
 	</dependencies>
 
 	<build>
-	
-	<finalName>ecart</finalName>
-	
-	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
