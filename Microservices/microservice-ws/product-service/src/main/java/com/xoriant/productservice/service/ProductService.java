@@ -9,4 +9,6 @@ public interface ProductService {
 	List<?> findAllProducts();
 
 	public Product findById(int productId);
+	
+	public double getPrice(int productId);
 }

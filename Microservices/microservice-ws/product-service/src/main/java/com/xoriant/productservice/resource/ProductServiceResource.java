@@ -28,5 +28,13 @@ public class ProductServiceResource {
 	public Product findProductById(@PathVariable int productId) {
 		return productService.findById(productId);
 	}
+	
+	@GetMapping("/filter/price/{productId}")
+	public double getPrice(@PathVariable int productId) {
+		return productService.getPrice(productId);
+	}
+	
+	
+	
 
 }
