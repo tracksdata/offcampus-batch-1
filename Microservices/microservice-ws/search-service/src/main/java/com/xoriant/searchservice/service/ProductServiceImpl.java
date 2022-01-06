@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.xoriant.searchservice.controller.Receiver;
 import com.xoriant.searchservice.dao.ProductDao;
 import com.xoriant.searchservice.entity.Product;
 
@@ -15,6 +16,18 @@ public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	private ProductDao productDao;
+	
+	
+	// Inventory Update
+	
+	public void updateInventory(int productId,int qty) {
+		
+		Product product = productDao.findById(productId).orElse(null);
+		product.setProductQty(product.getProductQty()-qty);
+		productDao.save(product);
+		System.out.println("SEARCH SERVICE::: Product Updated: "+product);
+
+	}
 	
 	
 	@Override

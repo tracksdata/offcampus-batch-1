@@ -7,6 +7,8 @@ import com.xoriant.searchservice.entity.Product;
 
 
 public interface ProductService {
+	
+	 void updateInventory(int productId,int qty);
 
 	Product findById(int id);
 

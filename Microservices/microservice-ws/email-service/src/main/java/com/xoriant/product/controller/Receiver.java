@@ -1,4 +1,4 @@
-package com.xoriant.produuct.controller;
+package com.xoriant.product.controller;
 
 
 import java.time.LocalDateTime;
@@ -17,6 +17,7 @@ public class Receiver {
 	private JavaMailSender javaMailSender;
 
 	@RabbitListener(queues = "EmailQ")
+	
 	public void orderIfo(Map<String, Object> orderInfo) {
 		 System.out.println("===========> Email-Service:: ****====**** <===========");
 			System.out.println(orderInfo);
@@ -27,7 +28,7 @@ public class Receiver {
 
 	        int orderId=(int)orderInfo.get("ORDER_ID");
 	        LocalDateTime orderDate=(LocalDateTime)orderInfo.get("ORDER_DATE");
-	        String transactionID=(String)orderInfo.get("TRANSACTION_ID");
+	        String transactionID=(String)orderInfo.get("TRX_ID");
 	        double total=(double)orderInfo.get("TOTAL");
 	     
 	        msg.setSubject("Your Order "+orderId+" Confirmation");
